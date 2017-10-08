@@ -9,7 +9,12 @@ var cadi = {
     started: false,
     fuel: 0,
     start: function () {
-        this.started = true;
+        if(this.fuel > 0){
+            this.started = true;
+        } else {
+            alert("The car is on empty, fill up before starting!")
+        }
+        
     },
     stop: function () {
         this.started = false;
