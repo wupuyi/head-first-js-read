@@ -6,4 +6,4 @@
 
 ### [2.0 版本](zhanjianGAME/2.0)
 
-2.0 版本试玩地址: []()
+2.0 版本试玩地址: [https://wupuyi.github.io/head-first-js-read/zhanjianGAME/2.0/](https://wupuyi.github.io/head-first-js-read/zhanjianGAME/2.0/)
