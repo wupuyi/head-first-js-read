@@ -1,0 +1,16 @@
+body,html{
+    height: 100%;
+}
+.container{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.container img {
+    width: 30%;
+    height: 100%;
+}
