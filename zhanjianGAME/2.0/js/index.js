@@ -26,9 +26,9 @@ var model = {
     // 有多少战艘战舰已经被击沉
     shipsSunk: 0,
     // 战舰所处位置以及被击中的部位
-    ships: [{ locations: ["06", "16", "26"], hits: ["", "", ""] },
-            { locations: ["24", "34", "44"], hits: ["", "", ""] },
-            { locations: ["10", "11", "12"], hits: ["", "", ""] }],
+    ships: [{ locations: [0, 0, 0], hits: ["", "", ""] },
+            { locations: [0, 0, 0], hits: ["", "", ""] },
+            { locations: [0, 0, 0], hits: ["", "", ""] } ],
             
     // 处理玩家向战舰开火的方法，判断是否击中
     fire: function(guess) {
@@ -64,6 +64,48 @@ var model = {
             }
         }
         return true;
+    },
+    // 创建ships数组
+    generateShipLocations: function() {
+        var locations;
+        for (var i = 0; i < this.numShips; i++) {
+            do {
+                locations = this.generateShip();
+            } while (this.collision(locations));
+            this.ships[i].locations = locations;
+        }
+    },
+    // 创建战舰，并指定位置
+    generateShip: function() {
+        var direction = Math.floor(Math.random() * 2);
+        var row, col;
+        var newShipLocations = [];
+        for (var i = 0; i < this.shipLength; i++) {
+            if(direction === 1) {
+                //生成水平战舰的起始位置
+                row = Math.floor(Math.random() * this.boardSize);
+                col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+                newShipLocations.push(row + "" + (col + i));
+            } else {
+                //生成垂直战舰的起始位置
+                row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+                col = Math.floor(Math.random() * this.boardSize);
+                newShipLocations.push((row + i) + "" + col);
+            }
+        }
+        return newShipLocations;
+    },
+    // 判断是否重叠
+    collision: function(locations) {
+        for (var i = 0; i < this.numShips; i++) {
+            var ship = model.ships[i];
+            for (var j = 0; j < locations.length; j++) {
+                if (ship.locations.indexOf(locations[j]) >= 0){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 };
 
@@ -115,6 +157,8 @@ function init() {
     fireButton.onclick = handleFireButton;
     var guessInput = document.getElementById("guessInput");
     guessInput.onkeypress = handleKeyPress;
+
+    model.generateShipLocations();  //生成战舰位置
 }
 
 function handleFireButton() {
@@ -133,6 +177,9 @@ function handleKeyPress(e) {
         return false;
     }
 }
+
+
+
 
 window.onload = init;
 
