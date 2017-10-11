@@ -42,3 +42,22 @@ var counter2 = makeCounter2();
 console.log(counter2.increment());
 console.log(counter2.increment());
 console.log(counter2.increment());
+
+
+
+// function makeTimer(doneMessage, n) {
+//     setTimeout(function () {
+//         alert(doneMessage);
+//     }
+//     , n);
+// }
+
+
+function makeTimer(doneMessage, n) {
+    var handler = function () {
+        alert(doneMessage);
+    }
+    setTimeout(handler, n);
+}
+
+makeTimer("Cookies are done!", 3000);
