@@ -61,3 +61,41 @@ function makeTimer(doneMessage, n) {
 }
 
 makeTimer("Cookies are done!", 3000);
+
+
+
+/**
+ * 示例二：不使用闭包创建
+ */
+
+
+//  var count = 0;
+
+//  window.onload = function() {
+//      var button = document.getElementById("clickme");
+//      button.onclick = handleClick;
+//  }
+
+// function handleClick() {
+//     var message = "You click me ";
+//     var div = document.getElementById("message");
+//     count++;
+//     div.innerHTML = message + count + " times!";
+// }
+
+
+/***
+ * 使用闭包
+ */
+
+ window.onload = function() {
+     var count = 0;
+     var message = "You click me ";
+     var div = document.getElementById("message");
+     var button = document.getElementById("clickme");
+
+     button.onclick = function() {
+         count++;
+         div.innerHTML = message + count + " times!";
+     }
+ }
