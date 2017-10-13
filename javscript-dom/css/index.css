@@ -26,7 +26,14 @@
 
 .my-ul li {
     float: left;
-    width: 10%
+    width: 16%;
+}
+.my-ul li a {
+    display: block;
+}
+.my-ul li a img {
+    display: block;
+    width: 100%;
 }
 
 
