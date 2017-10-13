@@ -1,0 +1,45 @@
+.title-h1 {
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+.my-ul {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.my-ul li {
+    float: left;
+    width: 10%
+}
+
+
+
+
+#placeholder {
+    width: 640px;
+    height: 480px;
+    display: block;
+    margin: 0 auto;
+}
+
+#description {
+    text-align: center;
+    font-size: 26px;
+}

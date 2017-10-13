@@ -6,30 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JavaScript DOM编程艺术</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <h1>照片墙</h1>
-    <ul>
+    <h1 class="title-h1">照片墙</h1>
+    <ul class="my-ul clearfix">
         <li>
-            <a href="img/001.jpg">天刀001</a>
+            <a href="img/001.jpg" onclick="showPic(this); return false;" title="天涯明月刀——明月心">天刀001</a>
         </li>
         <li>
-            <a href="img/002.jpg">天刀002</a>
+            <a href="img/002.jpg" onclick="showPic(this); return false;" title="天涯明月刀——唐门">天刀002</a>
         </li>
         <li>
-            <a href="img/003.jpg">天刀003</a>
+            <a href="img/003.jpg" onclick="showPic(this); return false;" title="天涯明月刀——太白">天刀003</a>
         </li>
         <li>
-            <a href="img/004.jpg">天刀004</a>
+            <a href="img/004.jpg" onclick="showPic(this); return false;" title="天涯明月刀——天香">天刀004</a>
         </li>
         <li>
-            <a href="img/005.jpg">天刀005</a>
+            <a href="img/005.jpg" onclick="showPic(this); return false;" title="天涯明月刀——唐门2">天刀005</a>
         </li>
         <li>
-            <a href="img/006.jpg">天刀006</a>
+            <a href="img/006.jpg" onclick="showPic(this); return false;" title="天涯明月刀——公子羽">天刀006</a>
         </li>
     </ul>
+    <img src="img/placeholder.gif" alt="my image gallery" id="placeholder">
+
+    <p id="description">Choose an image</p>
+
+    <script src="js/index.js"></script>
 </body>
 
 </html>
