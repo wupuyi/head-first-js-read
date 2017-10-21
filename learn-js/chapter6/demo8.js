@@ -5,24 +5,25 @@ function SuperType(name) {
 
 SuperType.prototype.sayName = function() {
     console.log(this.name);
-};
-
-function SubType(name, age) {
-    
-    //继承属性
-    SuperType.call(this, name);
-
-    this.age = age;
-
 }
-
-//继承方法
+/**
+ * 
+ * obj.call(thisObj, arg1, arg2, ...);
+ * obj.apply(thisObj, [arg1, arg2, ...]);
+ * 
+ * 
+ */
+function SubType(name, age) {
+    SuperType.call(this, name);
+    this.age = age;
+}
 
 SubType.prototype = new SuperType();
 SubType.prototype.constructor = SubType;
 SubType.prototype.sayAge = function() {
     console.log(this.age);
 }
+
 
 var instance1 = new SubType('Nicholas', 29);
 instance1.colors.push('black');
