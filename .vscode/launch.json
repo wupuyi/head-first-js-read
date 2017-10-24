@@ -7,7 +7,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/learn-js/chapter5/demo1"
+            "program": "${file}"
         },
         {
             "type": "chrome",
