@@ -10,4 +10,4 @@
 
 ## 2. 测试小游戏
 
-地址：[点我！！！点我！！！点我！！！](https://wupuyi.github.io/head-first-js-read/testGame)
+地址：[点我！！！点我！！！点我！！！](https://wupuyi.github.io/head-first-js-read/picGame)
