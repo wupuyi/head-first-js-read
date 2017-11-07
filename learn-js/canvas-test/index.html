@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CANVAS TEST 001</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="600" height="400" style="border: 1px solid #000">
+        您的浏览器不支持html canvas标签
+    </canvas>
+
+
+    <script>
+        var c = document.getElementById('myCanvas');
+        var ctx = c.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+        ctx.stroke();
+    </script>
+</body>
+
+</html>
