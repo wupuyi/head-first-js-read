@@ -73,9 +73,6 @@ $(function () {
     function demo() {
         alert('Hello, jQuery！');
     }
-
-    var demo1 = $('.demo')[0];
-    console.log(demo1);
     $('.demo').click(demo);
 })
 
