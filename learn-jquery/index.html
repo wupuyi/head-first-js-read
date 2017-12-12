@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery 练习</title>
+</head>
+
+<body>
+
+    <p class="demo">
+        点我点我！
+    </p>
+    <p>测试1</p>
+    <p>测试3</p>
+    <!-- <script src="dist/bundle.js"></script> -->
+    <script>
+        var items = document.getElementsByTagName('p');
+        for (var i = 0; i < items.length; i++) {
+            (function (i) {
+                items[i].onclick = function () {
+                    console.log('you point me!' + i);
+                }
+            })(i);
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "learn-jquery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "puyi wu",
+  "license": "ISC",
+  "devDependencies": {
+    "jquery": "^3.2.1",
+    "react": "^16.2.0",
+    "webpack": "^3.10.0"
+  }
+}
