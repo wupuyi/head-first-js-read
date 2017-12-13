@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jQuery 练习</title>
+    <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/main.css">
 </head>
 
 <body>
-    
+
     <!-- eg.1 -->
 
     <!-- <p class="demo">点我点我！</p>
@@ -57,7 +59,7 @@
 
 
     <!-- eg.4 -->
-
+    <!-- 
     <div class="one" id="one">
         id为one .class为one的div
         <div class="mini">class 为mini</div>
@@ -66,12 +68,20 @@
         id为two .class为one .title为test的div
         <div class="mini" title="other"></div>
         <div class="mini"></div>
+    </div> -->
+
+    <div class="hide" data-img="hidden">
+        <img src="http://a.hiphotos.baidu.com/image/pic/item/91ef76c6a7efce1b0db20ed9a551f3deb48f650c.jpg">
     </div>
+    <div class="myImg">
+        <img src="http://h.hiphotos.baidu.com/image/pic/item/dc54564e9258d10914e568a1db58ccbf6c814d9b.jpg">
+    </div>
+    <button id="btn">缩小</button>
 
 
     <!-- 引入打包好的js文件 -->
-    <!-- <script src="dist/bundle.js"></script> -->
-    
+    <script src="dist/bundle.js"></script>
+
     <!-- <script>
         var items = document.getElementsByTagName('p');
         for (var i = 0; i < items.length; i++) {
