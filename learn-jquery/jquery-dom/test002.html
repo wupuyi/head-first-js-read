@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jqueryDom操作</title>
+    <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <p>
+        <a href="#" class="tooltip" title="这是我的超链接提示1">提示1.</a>
+    </p>
+    <p>
+        <a href="#" class="tooltip" title="这是我的超链接提示2">提示2.</a>
+    </p>
+    <p>
+        <a href="#" title="这是自带提示1">自带提示1</a>
+    </p>
+    <p>
+        <a href="#" title="这是自带提示2">自带提示2</a>
+    </p>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        $(function () {
+            var x = 10,
+                y = 10;
+            $('a.tooltip').mouseover(function (e) {
+                this.myTitle = this.title;
+                this.title = "";
+                var tooltip = '<div id="tooltip">' + this.myTitle + '</div>';
+                $('body').append(tooltip);
+                $('#tooltip').css({
+                    'position': 'absolute',
+                    'top': (e.pageY + x) + 'px',
+                    'left': (e.pageX + y) + 'px'
+                }).show('fast');
+                console.log(e.pageX, e.pageY);
+            }).mouseout(function () {
+                $('#tooltip').remove();
+                this.title = this.myTitle;
+            }).mousemove(function (e) {
+                $('#tooltip').css({
+                    // 'position': 'absolute',
+                    'top': (e.pageY + y) + 'px',
+                    'left': (e.pageX + x) + 'px'
+                })
+                    console.log(e.pageX, e.pageY);
+            });
+        })
+    </script>
+</body>
+
+</html>

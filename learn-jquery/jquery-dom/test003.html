@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jqueryDom操作</title>
+    <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+    <style>
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        ul li {
+            border: 1px solid #cccccc;
+        }
+        
+        a.tooltip {
+            display: block;
+        }
+        a.tooltip img {
+            display: block;
+        }
+        
+        #tooltip {
+            border: 1px solid #333333;
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        #tooltip img {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="../img/ipad.jpg" class="tooltip" title="iPad Pro">
+                <img src="../img/ipad-small.jpg" alt="iPad Pro">
+            </a>
+        </li>
+        <li>
+            <a href="../img/iphone.jpg" class="tooltip" title="iPhone X">
+                <img src="../img/iphone-small.jpg" alt="iPhone X">
+            </a>
+        </li>
+        <li>
+            <a href="../img/macbook-air.jpg" class="tooltip" title="MacBook Air">
+                <img src="../img/macbook-air-small.jpg" alt="MacBook Air">
+            </a>
+        </li>
+        <li>
+            <a href="../img/tsy.jpg" class="tooltip" title="谭松韵">
+                <img src="../img/tsy-small.jpg" alt="谭松韵">
+            </a>
+        </li>
+    </ul>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        $(function() {
+            var x = 20;
+            var y = 30;
+            $('a.tooltip').mouseover(function(e) {
+                this.myTitle = this.title;
+                this.title = "";
+                var imgTitle = this.myTitle ? "<br/>" + this.myTitle : '';
+                var tooltip = '<div id="tooltip"><img src="' + this.href + '" alt="产品预览图">' + imgTitle + '</div>';
+                // <img src="' + this.href + '" alt="产品预览图">
+                $('body').append(tooltip);
+                $('#tooltip').css({
+                    'position': 'absolute',
+                    'top': (e.pageY + y) + 'px',
+                    'left': (e.pageX + x) + 'px'
+                }).show('fast');
+            }).mouseout(function() {
+                this.title = this.myTitle;
+                $('#tooltip').remove();
+            }).mousemove(function(e) {
+                $('#tooltip').css({
+                    'top': (e.pageY + y) + 'px',
+                    'left': (e.pageX + x) + 'px'
+                });
+            });
+        })
+    </script>
+</body>
+
+</html>

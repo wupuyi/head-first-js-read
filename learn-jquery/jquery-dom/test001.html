@@ -10,20 +10,32 @@
 </head>
 
 <body>
-
+    <button id="btn">点我删除</button>
     <div id="imgContainer">
-        <img src="http://g.hiphotos.baidu.com/image/pic/item/b8389b504fc2d5620bbc0bfeed1190ef76c66c69.jpg" alt="" title="美图" id="myImg">
+<img src="http://g.hiphotos.baidu.com/image/pic/item/b8389b504fc2d5620bbc0bfeed1190ef76c66c69.jpg" data-img="del" alt=""
+    title="美图" id="myImg">
     </div>
-    
+
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script>
         // var $title = $('#myImg').attr('src', 'http://g.hiphotos.baidu.com/image/pic/item/42166d224f4a20a4b88a3a0d99529822730ed060.jpg');
 
-        $img = $('<img src="http://g.hiphotos.baidu.com/image/pic/item/42166d224f4a20a4b88a3a0d99529822730ed060.jpg">');
+        $img = $('<img src="http://g.hiphotos.baidu.com/image/pic/item/42166d224f4a20a4b88a3a0d99529822730ed060.jpg" data-img="del">');
         $div = $("<div class='abc'></div>");
-        $('#imgContainer').append($div);
-        $('#imgContainer').append($img);
-
+        $imgContainer = $('#imgContainer');
+        $img1 = $('<img src="http://c.hiphotos.baidu.com/image/pic/item/3812b31bb051f819d4ec8680d3b44aed2f73e72b.jpg">');
+        $imgContainer.prepend($div);
+        // $img1.prependTo($imgContainer);
+        $imgContainer.after($img1);
+        // $div.appendTo($imgContainer);
+        // $imgContainer.append($div);
+        // $imgContainer.append($img);
+        // $('#btn').click(function() {
+        //     $img1.remove();
+        // })
+        $('#btn').click(function () {
+            $('img').remove('[data-img="del"]');
+        })
 
         // console.log($title);
     </script>
