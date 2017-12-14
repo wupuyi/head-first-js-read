@@ -17,14 +17,15 @@
         ul li {
             border: 1px solid #cccccc;
         }
-        
+
         a.tooltip {
             display: block;
         }
+
         a.tooltip img {
             display: block;
         }
-        
+
         #tooltip {
             border: 1px solid #333333;
             background-color: #333333;
@@ -62,14 +63,15 @@
     </ul>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script>
-        $(function() {
+        $(function () {
             var x = 20;
             var y = 30;
-            $('a.tooltip').mouseover(function(e) {
+            $('a.tooltip').mouseover(function (e) {
                 this.myTitle = this.title;
                 this.title = "";
                 var imgTitle = this.myTitle ? "<br/>" + this.myTitle : '';
-                var tooltip = '<div id="tooltip"><img src="' + this.href + '" alt="产品预览图">' + imgTitle + '</div>';
+                var tooltip = '<div id="tooltip"><img src="' + this.href + '" alt="产品预览图">' + imgTitle +
+                    '</div>';
                 // <img src="' + this.href + '" alt="产品预览图">
                 $('body').append(tooltip);
                 $('#tooltip').css({
@@ -77,14 +79,21 @@
                     'top': (e.pageY + y) + 'px',
                     'left': (e.pageX + x) + 'px'
                 }).show('fast');
-            }).mouseout(function() {
+            }).mouseout(function () {
                 this.title = this.myTitle;
                 $('#tooltip').remove();
-            }).mousemove(function(e) {
-                $('#tooltip').css({
-                    'top': (e.pageY + y) + 'px',
-                    'left': (e.pageX + x) + 'px'
-                });
+            }).mousemove(function (e) {
+                if (e.pageX < 1200) {
+                    $('#tooltip').css({
+                        'top': (e.pageY + y) + 'px',
+                        'left': (e.pageX + x) + 'px'
+                    });
+                } else {
+                    $('#tooltip').css({
+                        'top': (e.pageY + y) + 'px',
+                        'left':(e.pageX + x) + 'px'
+                    });
+                }
             });
         })
     </script>
