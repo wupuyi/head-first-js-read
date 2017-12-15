@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery表格</title>
+    <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+    <style>
+        table {
+            margin: 100px;
+            border: 1px solid #666666;
+            border-collapse: collapse;
+        }
+
+        table thead {
+            border-bottom: 1px solid #666666;
+            background-color: #708ed7;
+            text-align: left;
+        }
+
+        table td {
+            width: 200px;
+        }
+
+        .even {
+            background: #5478c4;
+        }
+
+        .odd {
+            background: #cbdbeb;
+        }
+
+        .selected {
+            background: #d34c1f
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>暂住地</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" name="select">
+                </td>
+                <td>张三</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="select">
+                </td>
+                <td>李四</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="select">
+                </td>
+                <td>王五</td>
+                <td>男</td>
+                <td>湖南长沙</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="select">
+                </td>
+                <td>赵六</td>
+                <td>男</td>
+                <td>浙江温州</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="select">
+                </td>
+                <td>Rain</td>
+                <td>男</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="select">
+                </td>
+                <td>MAXMAN</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        $(function () {
+            $('tbody>tr:odd').addClass('odd');
+            $('tbody>tr:even').addClass('even');
+            $('tbody>tr').click(function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected')
+                           .find(':checkbox').attr(('checked', false));
+                } else {
+                    $(this).addClass('selected')
+                           .find(':checkbox').attr('checked', true);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

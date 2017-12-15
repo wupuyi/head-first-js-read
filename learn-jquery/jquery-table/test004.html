@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery表格</title>
+    <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+    <style>
+        table {
+            margin: 100px;
+            border: 1px solid #666666;
+            border-collapse: collapse;
+        }
+
+        table thead {
+            border-bottom: 1px solid #666666;
+            background-color: #708ed7;
+            text-align: left;
+        }
+
+        table td {
+            width: 200px;
+        }
+
+        .even {
+            background: #5478c4;
+        }
+
+        .odd {
+            background: #cbdbeb;
+        }
+
+        .selected {
+            background: #d34c1f
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <label for="search">筛选：</label>
+        <input type="text" name="search" id="search">
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>暂住地</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>男</td>
+                <td>湖南长沙</td>
+            </tr>
+            <tr>
+                <td>赵六</td>
+                <td>男</td>
+                <td>浙江温州</td>
+            </tr>
+            <tr>
+                <td>Rain</td>
+                <td>男</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>MAXMAN</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>王六</td>
+                <td>男</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>李字</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>男</td>
+                <td>湖南长沙</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        $(function () {
+            // $('tr:contains("王五")').addClass('selected');
+            // $('table tbody tr').hide()
+            //     .filter(':contains("李")').show();
+            $('#search').keyup(function() {
+                $('table tbody tr').hide()
+                                   .filter(':contains("'+($(this).val())+'")').show();
+            }).keyup();
+        });
+    </script>
+</body>
+
+</html>
