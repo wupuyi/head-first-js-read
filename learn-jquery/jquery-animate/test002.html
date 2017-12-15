@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery动画</title>
+    <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+    <style>
+        #panel {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #0050d0;
+            background: #96e555;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="panel">
+
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        $(function () {
+            // $('#panel').click(function () {
+            //     // $(this).animate({
+            //     //     // left: '+=500px'
+            //     //     left: '500px',
+            //     //     height: '200px'
+            //     // }, 3000);
+            //     $(this).animate({
+            //         left: '500px'
+            //     }).animate({
+            //         height: '200px'
+            //     })
+            // })
+            $('#panel').css('opacity', '0.5'); //设置不透明度
+            // $('#panel').click(function () {
+            //     $(this).animate({
+            //         left: '400px',
+            //         height: '200px',
+            //         opacity: '1'
+            //     }, 3000).animate({
+            //         top: '200px',
+            //         width: '200px'
+            //     }, 3000).fadeOut('slow');
+            // });
+            // $('#panel').click(function () {
+            //     $(this).animate({
+            //         left: '400px',
+            //         height: '200px',
+            //         opacity: '1'
+            //     }, 3000).animate({
+            //         top: '200px',
+            //         width: '200px'
+            //     }, 3000, function () {
+            //         $(this).css('border', '5px solid blue');
+            //     });
+            $('#panel').click(function () {
+                $(this).animate({
+                    left: '400px',
+                    height: '200px',
+                    opacity: '1'
+                }, 3000).animate({
+                    top: '200px',
+                    width: '200px',
+                    'border-width': '5px'
+                }, 3000);
+            });
+
+
+        })
+    </script>
+</body>
+
+</html>
