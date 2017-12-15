@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件冒泡</title>
+    <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+    <style>
+        #content {
+            background-color: #666666;
+        }
+        #content span {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="content">
+        外层div元素
+        <span>内层span元素</span>
+        外层div元素
+    </div>
+    <div id="msg"></div>
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        $(function() {
+            $('span').bind('click', function(event) {
+                var txt = $('#msg').html() + '<p>内层span元素被单击.</p>'
+                $('#msg').html(txt);
+                event.stopPropagation();  //停止冒泡事件
+            })
+
+            $('#content').bind('click', function() {
+                var txt = $('#msg').html() + '<p>外层div元素被单击.</p>'
+                $('#msg').html(txt);
+                event.stopPropagation();  //停止冒泡事件
+            });
+
+            $('body').bind('click', function() {
+                var txt = $('#msg').html() + '<p>body元素被点击</p>';
+                $('#msg').html(txt);
+            });
+        })
+
+        event.preventDefault();
+    </script>
+</body>
+
+</html>
