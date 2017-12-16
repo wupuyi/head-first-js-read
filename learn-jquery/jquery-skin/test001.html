@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery表格</title>
+    <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+    <style>
+        .container {
+            border: 1px solid #666666;
+            width: 500px;
+            margin: 50px;
+            padding: 20px;
+        }
+
+        .container div {
+            border: 1px solid #999999;
+            color: #ffffff;
+            background-color: gray;
+            width: 200px;
+
+        }
+
+
+        ul#skin {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul#skin li {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        ul#skin li.selected {
+            background-image: url('../img/duihao.png');
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+        }
+/* 
+        ul#skin li+li {
+            margin-left: 10px;
+        } */
+        li#skin_0 {
+            background: gray;
+        }
+        li#skin_1 {
+            background: purple;
+        }
+
+        li#skin_2 {
+            background: red;
+        }
+
+        li#skin_3 {
+            background: powderblue;
+        }
+
+        li#skin_4 {
+            background: orange;
+        }
+
+        li#skin_5 {
+            background: palegreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="skin">
+            <li id="skin_0" title="灰色" class="selected"></li>
+            <li id="skin_1" title="紫色"></li>
+            <li id="skin_2" title="红色"></li>
+            <li id="skin_3" title="天蓝色"></li>
+            <li id="skin_4" title="橙色"></li>
+            <li id="skin_5" title="淡绿色"></li>
+        </ul>
+
+        <div id="div_side_0">
+            <div id="news">
+                <h1 class="title">时事新闻</h1>
+            </div>
+        </div>
+        <div id="div_side_1">
+            <div id="game">
+                <h1 class="title">娱乐新闻</h1>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        $(function () {
+            var $li = $('#skin li');
+            $li.click(function() {
+                $('#'+this.id).addClass('selected')                       //当前元素选中
+                              .siblings().removeClass('selected');        //去掉其他同辈元素中的selected
+                // $('#cssfile').attr('href', 'css/' + this.id + '.css');
+                var $color = $('#'+this.id).css('background-color');
+                console.log($color);
+                $('.container div').css('background-color', $color);
+            })
+
+        })
+    </script>
+</body>
+
+</html>
