@@ -1,0 +1,46 @@
+{
+    "user": [
+        {
+            "name": "陶瑾元",
+            "id": 90,
+            "age": 27,
+            "birthday": "2006-03-03",
+            "city": "",
+            "color": "#a707bc",
+            "isMale": true,
+            "isFat": false,
+            "brother": "jack",
+            "sister": "jim",
+            "friends": [
+                "jack",
+                "jim",
+                "jack",
+                "jim"
+            ]
+        },
+        {
+            "gf": "范才"
+        },
+        {
+            "name": "吕善",
+            "id": 91,
+            "age": 26,
+            "birthday": "1995-10-25",
+            "city": "",
+            "color": "#5d55cc",
+            "isMale": true,
+            "isFat": true,
+            "brother": "jack",
+            "sister": "jim",
+            "friends": [
+                "jack",
+                "jim",
+                "jack",
+                "jim"
+            ]
+        },
+        {
+            "gf": "李勤顺"
+        }
+    ]
+}
