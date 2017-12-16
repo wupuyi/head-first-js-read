@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Ajax</title>
+    <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <input type="button" value="Ajax获取" id="send">
+    <div class="comment">已有评论：</div>
+    <div id="resText"></div>
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        $(function () {
+            // $('#send').click(function() {
+            //     $('#resText').load('test.html .para');
+            // })
+            $('#send').click(function(data) {
+                $('#resText').empty();
+                $.getJSON('http://api.flickr.com/services/feeds/photos_public.gne?tags=car&tagmode=any&format=json&jsoncall back=?', function(data) {
+                    $.each(data.item, function(i, item) {
+                        $('<img class="para"/>').attr('src', item.media.m)
+                                                .appendTo('#resText');
+                        if(i === 3) {
+                            return falsel;
+                        }
+                    })
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
