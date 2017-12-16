@@ -1,0 +1,88 @@
+/*
+ * @Author: Puyi Wu 
+ * @Date: 2017-12-16 13:13:40 
+ * @Last Modified by: Puyi Wu
+ * @Last Modified time: 2017-12-16 13:57:55
+ */
+
+
+/*
+  *通用清浮动
+  */
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+/* 头部样式 */
+
+#header {
+    background-color: #ffffff;
+    height: 160px;
+}
+
+#header .contWidth {
+    height: 160px;
+    z-index: 10;
+}
+
+.nav-top {
+    height: 120px;
+    line-height: 120px;
+    width: 1230px;
+    margin: 0 auto;
+}
+
+
+/* logo */
+
+#header .logo,
+#header .logo img {
+    display: block;
+}
+
+#header .logo {
+    float: left;
+    margin-top: 30px;
+}
+
+
+/* 搜索框 */
+
+#header .search {
+    float: right;
+}
+
+#header .search input {
+    width: 360px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #666666;
+    outline: none;
+}
+
+#header .search input:focus {
+    border-bottom: 2px solid #c01a42;
+}
+
+#header .mainNav {
+    background: #c01a42;
+    height: 40px;
+    line-height: 40px;
+}
+
+#header .mainNav .nav-main-con {
+    width: 1230px;
+    margin: 0 auto;
+}
