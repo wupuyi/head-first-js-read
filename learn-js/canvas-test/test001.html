@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas-001</title>
+</head>
+
+<body>
+
+  <canvas id="drawing" width="200" height="200">A drawing of something.</canvas>
+
+  <script>
+    var drawing = document.getElementById('drawing')
+
+    // 确定浏览器支持canvas元素
+    if (drawing.getContext) {
+      var context = drawing.getContext('2d');
+
+      // 取得图像的数据URI
+      var imageURI = document.toDataURL('image/png');
+
+      // 显示图像
+      var image = document.createElement('img');
+      image.src = imgURI;
+      document.body.appendChild(image);
+    }
+  </script>
+</body>
+
+</html>
